@@ -1,15 +1,29 @@
-public class Fibonacci {
+import java.util.Scanner;
+
+public class FizzBizz {
     public static void main(String[] args) {
-        int n = 11; 
-        int first = 0, second = 1;
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Fibonacci Series up to " + n + " terms:");
+        
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
 
-        for (int i = 1; i <= n; i++) {
-            System.out.print(first + " ");
-            int next = first + second;
-            first = second;
-            second = next;
+        
+        System.out.println(fizzBizz(number));
+
+        scanner.close();
+    }
+
+    
+    public static String fizzBizz(int num) {
+        if (num % 3 == 0 && num % 5 == 0) {
+            return "FIZZBIZZ";
+        } else if (num % 3 == 0) {
+            return "FIZZ";
+        } else if (num % 5 == 0) {
+            return "BIZZ";
+        } else {
+            return String.valueOf(num);
         }
     }
 }
