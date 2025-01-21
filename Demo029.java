@@ -8,9 +8,9 @@ class ArrayListNames{
         arrayList.add("Anitha");
         arrayList.add("Charita");
         arrayList.add("Rina");
-        // Convert ArrayList to array
+        
         String[] array = arrayList.toArray(new String[0]);
-        // Display the array
+        
         for (String i : array) {
             System.out.println(i);
         }

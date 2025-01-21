@@ -1,23 +1,21 @@
-
-import java.util.*;
+import java.util.Scanner;
 public class Demo027 {
-
-       public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a number: ");
-        int num = sc.nextInt();
-        
-        if (num <= 1) {
-            System.out.println(num + " is not a valid number for prime check.");
-        } else {
-            for (int i = 2; i < num; i++) {
-                if (num % i == 0) {
-                    System.out.println(num + " is not a valid number for prime check.");
-                    return;
-                }
+        int num = scanner.nextInt();
+        boolean isPrime = (num > 1);
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                isPrime = false;
+                break;
             }
-            System.out.println(num + " is a valid number for prime check.");
         }
-        sc.close();
+        if (isPrime) {
+            System.out.println(num + " is a prime number.");
+        } else {
+            System.out.println(num + " is not a prime number.");
+        }
+        scanner.close();
     }
 }
